@@ -2076,6 +2076,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6295619193285363715, guid: 20319e6cc23c1a3438e927a5a4860863, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6753469
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295619193285363715, guid: 20319e6cc23c1a3438e927a5a4860863, type: 3}
+      propertyPath: m_Center.y
+      value: 0.1255804
+      objectReference: {fileID: 0}
     - target: {fileID: 7278815294599740339, guid: 20319e6cc23c1a3438e927a5a4860863, type: 3}
       propertyPath: m_Name
       value: Item_Battery
