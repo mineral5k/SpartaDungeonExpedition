@@ -6,7 +6,6 @@ using UnityEngine;
 public interface IInteractable
 {
     public string GetPrompt();
-    public void OnInteract();
 }
 public class ItemObject : MonoBehaviour,IInteractable
 {
@@ -20,8 +19,5 @@ public class ItemObject : MonoBehaviour,IInteractable
 
     }
 
-    public void OnInteract()
-    {
-        throw new System.NotImplementedException();
-    }
+  
 }

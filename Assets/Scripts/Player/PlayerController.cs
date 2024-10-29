@@ -96,6 +96,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnInteractInput(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started && GameManager.Instance.Player.interaction.curInteractable !=null )
+        {
+            GameManager.Instance.Player.interaction.OnInteract();
+        }
+    }
+
     public void Walk()
     {
         moveSpeed = walkSpeed;
