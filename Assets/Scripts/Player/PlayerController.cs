@@ -6,6 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
+    public float walkSpeed;
+    public float dashSpeed;
+    public float dashStamina;
+    public float walkStamina;
     private Vector2 curMovementInput;
     public float jumptForce;
     public LayerMask groundLayerMask;
@@ -70,6 +74,32 @@ public class PlayerController : MonoBehaviour
         {
             rigidbody.AddForce(Vector2.up * jumptForce, ForceMode.Impulse);
         }
+    }
+
+    public void OnDashInput(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed )
+        {
+            if (GameManager.Instance.Player.condition.stamina.curValue > 30f)
+            {
+                moveSpeed = dashSpeed;
+                GameManager.Instance.Player.condition.stamina.passiveValue = dashStamina * -1;
+            }
+            else
+            {
+                Walk();
+            }
+        }
+        else
+        {
+            Walk();
+        }
+    }
+
+    public void Walk()
+    {
+        moveSpeed = walkSpeed;
+        GameManager.Instance.Player.condition.stamina.passiveValue = walkStamina;
     }
 
     private void Move()
