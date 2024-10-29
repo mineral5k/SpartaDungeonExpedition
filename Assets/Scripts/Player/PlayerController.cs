@@ -116,4 +116,12 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag=="JumpPlate")
+        {
+            rigidbody.AddForce(Vector2.up * jumptForce * 3, ForceMode.Impulse);
+        }
+    }
 }
